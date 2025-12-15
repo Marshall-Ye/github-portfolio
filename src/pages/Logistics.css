@@ -1,0 +1,32 @@
+.logistics-section-grid {
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .logistics-section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .logistics-section-number {
+    font-size: 80px !important;
+  }
+  
+  .logistics-section-title {
+    font-size: 2.5em !important;
+  }
+  
+  .logistics-section-subtitle {
+    font-size: 1.1em !important;
+  }
+  
+  .logistics-section {
+    padding: 40px 24px !important;
+  }
+}
+
