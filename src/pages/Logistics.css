@@ -28,5 +28,11 @@
   .logistics-section {
     padding: 40px 24px !important;
   }
+  
+  /* Responsive for About Me section layout */
+  .logistics-section > div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
 }
 
