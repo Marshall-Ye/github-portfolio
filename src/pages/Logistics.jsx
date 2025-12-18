@@ -4,9 +4,9 @@ import marshallPhoto from '../assets/about me.png';
 export default function Logistics() {
   return (
     <main style={{
-      width: "100%",
-      minHeight: "100vh",
-      overflowX: "hidden",
+      width: "100vw",
+      height: "100vh",
+      overflowY: "scroll",
       scrollSnapType: "y mandatory",
       backgroundColor: "#0a0a0a",
       fontFamily: "system-ui, -apple-system, sans-serif",
@@ -14,7 +14,7 @@ export default function Logistics() {
     }}>
       {/* Section 01 - Editorial Style */}
       <section className="logistics-section" style={{
-        width: "100%",
+        width: "100vw",
         height: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
@@ -25,8 +25,7 @@ export default function Logistics() {
         padding: "60px 80px",
         boxSizing: "border-box",
         backgroundColor: "#faf9f7",
-        position: "relative",
-        overflowX: "hidden"
+        position: "relative"
       }}>
         <div style={{
           maxWidth: "1300px",
@@ -140,7 +139,7 @@ export default function Logistics() {
 
       {/* Section 02 */}
       <section className="logistics-section" style={{
-        width: "100%",
+        width: "100vw",
         height: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
@@ -148,9 +147,7 @@ export default function Logistics() {
         alignItems: "center",
         justifyContent: "center",
         padding: "80px 60px",
-        boxSizing: "border-box",
-        backgroundColor: "#0a0a0a",
-        overflowX: "hidden"
+        boxSizing: "border-box"
       }}>
         <div className="logistics-section-grid">
           {/* Left: Media */}
@@ -206,7 +203,7 @@ export default function Logistics() {
 
       {/* Section 03 */}
       <section className="logistics-section" style={{
-        width: "100%",
+        width: "100vw",
         height: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
@@ -214,9 +211,7 @@ export default function Logistics() {
         alignItems: "center",
         justifyContent: "center",
         padding: "80px 60px",
-        boxSizing: "border-box",
-        backgroundColor: "#0a0a0a",
-        overflowX: "hidden"
+        boxSizing: "border-box"
       }}>
         <div className="logistics-section-grid">
           {/* Left: Media */}
