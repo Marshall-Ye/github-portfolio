@@ -4,9 +4,13 @@ import marshallPhoto from '../assets/about me.png';
 export default function Logistics() {
   return (
     <main style={{
-      width: "100vw",
-      height: "100vh",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
       overflowY: "scroll",
+      overflowX: "hidden",
       scrollSnapType: "y mandatory",
       backgroundColor: "#0a0a0a",
       fontFamily: "system-ui, -apple-system, sans-serif",
@@ -14,7 +18,7 @@ export default function Logistics() {
     }}>
       {/* Section 01 - Editorial Style */}
       <section className="logistics-section" style={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
@@ -60,19 +64,17 @@ export default function Logistics() {
             flexDirection: "column",
             gap: "0"
           }}>
-            {/* Large expressive headline */}
-            <h2 style={{
-              fontSize: "2.2em",
-              color: "#1f1f1f",
-              lineHeight: 1.3,
+            {/* Opening paragraph */}
+            <p style={{
+              fontSize: "1.1em",
+              color: "#3d3d3d",
+              lineHeight: 1.9,
               margin: 0,
-              marginBottom: "32px",
-              fontWeight: 600,
-              letterSpacing: "-0.5px",
-              fontFamily: "Georgia, 'Times New Roman', serif"
+              marginBottom: "28px",
+              fontWeight: 400
             }}>
-              Hello there! Thanks for clicking the button this guy called <span style={{ color: "#d35f2d" }}>Marshall Ye</span> spent an hour building.
-            </h2>
+              Hello there! Thanks for clicking the button this guy called <span style={{ color: "#d35f2d", fontWeight: 600 }}>Marshall Ye</span> spent an hour building!
+            </p>
 
             {/* Body copy - readable, warm */}
             <p style={{
@@ -139,7 +141,7 @@ export default function Logistics() {
 
       {/* Section 02 */}
       <section className="logistics-section" style={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
@@ -147,7 +149,8 @@ export default function Logistics() {
         alignItems: "center",
         justifyContent: "center",
         padding: "80px 60px",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
+        backgroundColor: "#faf9f7"
       }}>
         <div className="logistics-section-grid">
           {/* Left: Media */}
@@ -203,7 +206,7 @@ export default function Logistics() {
 
       {/* Section 03 */}
       <section className="logistics-section" style={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
@@ -211,7 +214,8 @@ export default function Logistics() {
         alignItems: "center",
         justifyContent: "center",
         padding: "80px 60px",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
+        backgroundColor: "#faf9f7"
       }}>
         <div className="logistics-section-grid">
           {/* Left: Media */}
