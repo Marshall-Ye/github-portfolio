@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import logisticsBg from '../assets/logistics-bg.jpg';
 import marshallPhoto from '../assets/marshall-photo.jpg';
 import fourBlocks from '../assets/four blocks.png';
+import blueArrow from '../assets/blue arrow 1.png';
+import './Home.css';
 
 export default function Home() {
   // Ensure page starts at top when component mounts
@@ -28,9 +30,9 @@ export default function Home() {
       fontFamily: "system-ui, -apple-system, sans-serif"
     }}>
       {/* Section 1 - About Me */}
-      <section style={{
+      <section className="home-about-section" style={{
         width: "100%",
-        height: "100vh",
+        minHeight: "100vh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
         display: "flex",
@@ -44,16 +46,16 @@ export default function Home() {
         overflow: "hidden"
       }}>
         <div style={{
-          maxWidth: "1600px",
+          maxWidth: "1400px",
           width: "100%",
           height: "100%",
           display: "grid",
-          gridTemplateColumns: "300px 1fr 300px",
+          gridTemplateColumns: "minmax(250px, 400px) 1fr minmax(200px, 300px)",
           gap: "50px",
           alignItems: "stretch"
         }}>
           {/* Left: Personal photo */}
-          <div style={{
+          <div className="home-image-left" style={{
             height: "100%",
             display: "flex"
           }}>
@@ -71,7 +73,7 @@ export default function Home() {
           </div>
 
           {/* Center: Text content */}
-          <div style={{
+          <div className="home-text-content" style={{
             display: "flex",
             flexDirection: "column",
             gap: "16px",
@@ -138,9 +140,12 @@ export default function Home() {
           </div>
 
           {/* Right: Four blocks - professional/creative domains */}
-          <div style={{
+          <div className="home-image-right" style={{
             height: "100%",
-            display: "flex"
+            display: "flex",
+            position: "relative",
+            alignItems: "center",
+            justifyContent: "center"
           }}>
             <img 
               src={fourBlocks} 
@@ -152,11 +157,37 @@ export default function Home() {
                 opacity: 0.85
               }}
             />
+            {/* Handwritten labels with arrows */}
+            <div className="four-blocks-labels">
+              {/* Top-left: UCSC */}
+              <div className="label-top-left">
+                <span>This is where I studied</span>
+                <img src={blueArrow} alt="" className="arrow arrow-tl" />
+              </div>
+              
+              {/* Top-right: Python */}
+              <div className="label-top-right">
+                <span>My favorite language to build with</span>
+                <img src={blueArrow} alt="" className="arrow arrow-tr" />
+              </div>
+              
+              {/* Bottom-left: Logistics */}
+              <div className="label-bottom-left">
+                <span>The industry I work in by day</span>
+                <img src={blueArrow} alt="" className="arrow arrow-bl" />
+              </div>
+              
+              {/* Bottom-right: Games */}
+              <div className="label-bottom-right">
+                <span>What I build at night</span>
+                <img src={blueArrow} alt="" className="arrow arrow-br" />
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div style={{
+        <div className="home-scroll-indicator" style={{
           position: "absolute",
           bottom: "48px",
           left: "50%",
@@ -177,7 +208,7 @@ export default function Home() {
       </section>
 
       {/* Section 2 - Split Homepage (existing design) */}
-      <section style={{
+      <section className="home-split-section" style={{
         width: "100vw",
         height: "100vh",
         scrollSnapAlign: "start",
@@ -223,7 +254,7 @@ export default function Home() {
           </Link>
 
           {/* Middle Section - Name */}
-          <div style={{
+          <div className="home-split-middle" style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
