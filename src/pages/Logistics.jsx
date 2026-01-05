@@ -1,5 +1,4 @@
 import './Logistics.css';
-import marshallPhoto from '../assets/about me.png';
 
 export default function Logistics() {
   return (
@@ -16,7 +15,7 @@ export default function Logistics() {
       fontFamily: "system-ui, -apple-system, sans-serif",
       scrollBehavior: "smooth"
     }}>
-      {/* Section 01 - Editorial Style */}
+      {/* Section 01 - WIP */}
       <section className="logistics-section" style={{
         width: "100%",
         height: "100vh",
@@ -32,110 +31,28 @@ export default function Logistics() {
         position: "relative"
       }}>
         <div style={{
-          maxWidth: "1300px",
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "0.35fr 0.65fr",
-          gap: "60px",
-          alignItems: "center"
+          textAlign: "center",
+          maxWidth: "800px"
         }}>
-          {/* Left: Illustrated Image - kept exactly as-is */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center"
+          <h1 style={{
+            fontSize: "3em",
+            fontWeight: 700,
+            color: "#3d3d3d",
+            margin: 0,
+            marginBottom: "24px",
+            letterSpacing: "-1px"
           }}>
-            <img 
-              src={marshallPhoto} 
-              alt="Marshall Ye"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "70vh",
-                objectFit: "contain",
-                display: "block",
-                borderRadius: "12px"
-              }}
-            />
-          </div>
-
-          {/* Right: Text - Story-driven narrative */}
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0"
+            Work In Progress
+          </h1>
+          <p style={{
+            fontSize: "1.2em",
+            color: "#5a5a5a",
+            margin: 0,
+            fontWeight: 400,
+            lineHeight: 1.6
           }}>
-            {/* Opening paragraph */}
-            <p style={{
-              fontSize: "1.1em",
-              color: "#3d3d3d",
-              lineHeight: 1.9,
-              margin: 0,
-              marginBottom: "28px",
-              fontWeight: 400
-            }}>
-              Hello there! Thanks for clicking the button this guy called <span style={{ color: "#d35f2d", fontWeight: 600 }}>Marshall Ye</span> spent an hour building!
-            </p>
-
-            {/* Body copy - readable, warm */}
-            <p style={{
-              fontSize: "1.1em",
-              color: "#3d3d3d",
-              lineHeight: 1.9,
-              margin: 0,
-              marginBottom: "28px",
-              fontWeight: 400
-            }}>
-              I'm a <span style={{ color: "#c75a2a", fontWeight: 600 }}>Technical Product Manager</span> working in logistics at Golden Arcus. I hold a B.S. in Technology & Information Management from <span style={{ color: "#b8942a", fontWeight: 600 }}>UC Santa Cruz</span>, and I spend most of my time turning messy air, ocean, customs, and warehouse workflows into systems and automation that actually help operators.
-            </p>
-
-            {/* Pull quote - elevated emphasis */}
-            <blockquote style={{
-              fontSize: "1.15em",
-              color: "#d35f2d",
-              lineHeight: 1.6,
-              margin: "0 0 28px 0",
-              padding: "16px 0 16px 24px",
-              borderLeft: "3px solid #e8a87c",
-              fontStyle: "italic",
-              fontWeight: 500,
-              background: "linear-gradient(90deg, rgba(232, 168, 124, 0.08) 0%, transparent 100%)"
-            }}>
-              "I believe technology is the main driving force behind the future of logistics."
-            </blockquote>
-
-            {/* Secondary paragraph - softer */}
-            <p style={{
-              fontSize: "1.05em",
-              color: "#5a5a5a",
-              lineHeight: 1.85,
-              margin: 0,
-              marginBottom: "24px",
-              fontWeight: 400
-            }}>
-              Whether it's robotics and automation on the warehouse floor, or AI and software streamlining documentation and decision-making, progress comes from adopting better tools and using them well.
-            </p>
-
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div style={{
-          position: "absolute",
-          bottom: "48px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          color: "#4a4a4a"
-        }}>
-          <span style={{ 
-            fontSize: "0.95em", 
-            fontWeight: 400, 
-            fontStyle: "italic",
-            fontFamily: "Georgia, 'Times New Roman', serif"
-          }}>Scroll to see what I've built</span>
-          <span style={{ fontSize: "1em" }}>↓</span>
+            This section is under construction. Check back soon!
+          </p>
         </div>
       </section>
 

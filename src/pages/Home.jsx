@@ -4,6 +4,7 @@ import logisticsBg from '../assets/logistics-bg.jpg';
 import marshallPhoto from '../assets/marshall-photo.jpg';
 import fourBlocks from '../assets/four blocks.png';
 import blueArrow from '../assets/blue arrow 1.png';
+import cyberCityBg from '../assets/cyber city background.png';
 import './Home.css';
 
 export default function Home() {
@@ -91,7 +92,7 @@ export default function Home() {
               lineHeight: 1.6,
               fontStyle: "italic"
             }}>
-              Hello there! Thanks for stopping by. A guy called Marshall Ye spent half a month building this!
+              Hello there! Thanks for stopping by!<br/>A guy called Marshall Ye spent a month building this :)
             </p>
 
             {/* Introduction */}
@@ -102,10 +103,10 @@ export default function Home() {
               margin: 0,
               fontWeight: 400
             }}>
-              I'm <span style={{ color: "#d35f2d", fontWeight: 600 }}>Marshall Ye</span> — a Technical Product Manager working in logistics by day, and a builder of systems, tools, and games by habit.
+              I'm <span style={{ color: "#d35f2d", fontWeight: 600 }}>Marshall Ye</span> — a Technical Product Manager in logistics, building systems and tools by day, and games by night.
             </p>
 
-            {/* Professional section */}
+            {/* By day section */}
             <p style={{
               fontSize: "1.05em",
               color: "#3d3d3d",
@@ -113,10 +114,10 @@ export default function Home() {
               margin: 0,
               fontWeight: 400
             }}>
-              Professionally, I work at <span style={{ color: "#c75a2a", fontWeight: 600 }}>Golden Arcus</span>, where I turn messy air, ocean, customs, and warehouse workflows into software and automation that actually help operators get work done. I hold a B.S. in Technology & Information Management from <span style={{ color: "#b8942a", fontWeight: 600 }}>UC Santa Cruz</span>, and my focus has always been the same: using technology to reduce friction, surface clarity, and scale operations without adding unnecessary complexity.
+              By day, I work at <span style={{ color: "#c75a2a", fontWeight: 600 }}>Golden Arcus</span>, turning messy air, ocean, customs, and warehouse workflows into software and automation that actually help operators get work done. I hold a B.S. in Technology & Information Management from <span style={{ color: "#b8942a", fontWeight: 600 }}>UC Santa Cruz</span>, and I focus on using technology to reduce friction, automate document processes, enable digital workflows, eliminate human error, and improve efficiency as operations scale.
             </p>
 
-            {/* Technology paragraph */}
+            {/* Industries paragraph */}
             <p style={{
               fontSize: "1.05em",
               color: "#3d3d3d",
@@ -124,7 +125,18 @@ export default function Home() {
               margin: 0,
               fontWeight: 400
             }}>
-              Whether it's automation and robotics on the warehouse floor, or software and AI streamlining documentation, customs exams, and decision-making, industries don't fail because they're complicated — they fail because they adapt too slowly. That belief is what pushed me to build internal tools, WMS systems, and automation platforms that sit directly inside real operational pain points.
+              That focus has pushed me to build internal tools, WMS systems, and automation platforms that live directly inside real operational pain points.
+            </p>
+
+            {/* By night */}
+            <p style={{
+              fontSize: "1.05em",
+              color: "#3d3d3d",
+              lineHeight: 1.75,
+              margin: 0,
+              fontWeight: 400
+            }}>
+              <span style={{ color: "#7b68ee", fontWeight: 600 }}>By night, I build video games.</span>
             </p>
 
             {/* Games section */}
@@ -135,7 +147,7 @@ export default function Home() {
               margin: 0,
               fontWeight: 400
             }}>
-              Outside of logistics, I also build video games. While the domains look different on the surface, the mindset is the same: systems thinking, iteration, user experience, and making complex mechanics feel intuitive. Games are where I explore design, storytelling, and interaction — and logistics is where I apply those same instincts to real-world systems.
+              I've always been passionate about games — action, RPGs, MOBAs, you name it. I explore all parts of game development, but I'm especially drawn to <span style={{ color: "#4a90e2", fontWeight: 600 }}>combat design</span>: Boss fights that feel challenging but also fair and fun. I regularly participate in game jams and work on my own projects. The Monster Hunter series is my all-time favorite, and it's the kind of complex, memorable combat experience I hope to create one day.
             </p>
           </div>
 
@@ -278,16 +290,23 @@ export default function Home() {
 
           {/* Right Section - Video Games */}
           <Link to="/games" style={{
-            backgroundColor: "#fff",
+            backgroundImage: `url(${cyberCityBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             width: "100%",
             height: "100%",
             textDecoration: "none",
-            border: "none"
+            border: "none",
+            position: "relative"
           }}>
             <span style={{
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              padding: "12px 24px",
+              borderRadius: 8,
               color: "#111",
               fontWeight: 700,
               fontSize: "1.2em",
