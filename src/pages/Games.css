@@ -1,0 +1,417 @@
+.games-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.game-projects-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #faf9f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-projects-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centered Intro Card - positioned absolutely in center */
+.intro-card {
+  max-width: 600px;
+  padding: 40px;
+  background-color: rgba(12, 14, 20, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  text-align: center;
+  z-index: 25;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.intro-card p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #F2F4F8;
+  margin: 0 0 24px 0;
+}
+
+.games-played-link {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #7FB9FF;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.games-played-link:hover {
+  color: #5FA3FF;
+  text-decoration-thickness: 3px;
+  transform: translateY(-1px);
+}
+
+/* 2x2 Grid - fills entire viewport */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Project Blocks */
+.project-block {
+  position: relative;
+  background-color: #1a1a1a;
+  border-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.project-block:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-color: #fff;
+  z-index: 15;
+}
+
+.project-block:hover .project-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay for project title and subtitle */
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 30px 24px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 60%, transparent 100%);
+  transition: background 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.project-overlay-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.project-content {
+  display: none;
+}
+
+.project-title {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: inherit;
+}
+
+.project-subtitle {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-align: inherit;
+}
+
+.itch-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fa5c5c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.itch-button:hover {
+  background-color: #e04545;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #666;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-content h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.modal-status {
+  font-size: 1.2em;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.modal-content p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #3d3d3d;
+  margin: 0 0 24px 0;
+}
+
+/* Responsive Mobile Layout */
+@media (max-width: 768px) {
+  .game-projects-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .game-projects-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  .intro-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 24px 40px 24px;
+    max-width: calc(100% - 48px);
+    pointer-events: auto;
+  }
+
+  .intro-card p {
+    font-size: 1em;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    height: auto;
+    flex: 1;
+  }
+
+  .project-block {
+    min-height: 25vh;
+  }
+
+  .project-image-placeholder {
+    min-height: 150px;
+  }
+
+  .project-overlay {
+    padding: 20px;
+  }
+
+  .project-content {
+    padding: 16px 20px;
+  }
+
+  .project-title {
+    font-size: 1.8em;
+  }
+
+  .project-subtitle {
+    font-size: 1.1em;
+  }
+
+  .modal-content {
+    padding: 30px 24px;
+    max-height: 90vh;
+  }
+
+  .modal-content h2 {
+    font-size: 2em;
+    padding-right: 40px;
+  }
+}
+
+/* Games Played Page Styles */
+.games-played-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #faf9f7;
+  position: relative;
+  overflow-y: auto;
+}
+
+.games-played-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 80px 60px;
+  box-sizing: border-box;
+}
+
+.games-played-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 1em;
+  color: #666;
+  text-decoration: none;
+  margin-bottom: 30px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+.games-played-header h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+  letter-spacing: -1px;
+}
+
+.games-played-intro {
+  font-size: 1.2em;
+  line-height: 1.7;
+  color: #5a5a5a;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.games-played-content {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .games-played-container {
+    padding: 40px 24px;
+  }
+
+  .games-played-header h1 {
+    font-size: 2.5em;
+  }
+
+  .games-played-intro {
+    font-size: 1.1em;
+  }
+
+  .games-played-content {
+    padding: 40px 24px;
+  }
+}

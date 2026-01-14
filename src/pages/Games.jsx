@@ -1,190 +1,149 @@
-import './Logistics.css';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Games.css';
+import shellComeBackImg from '../assets/She\'ll come back.png';
+import interningGodImg from '../assets/Interning God.png';
+import harvesterRunImg from '../assets/harvester run.png';
+import cyberCityBgImg from '../assets/cyber city background.png';
 
 export default function Games() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const projects = {
+    'shell-come-back': {
+      title: "She'll Come Back",
+      subtitle: "Released",
+      status: "Released",
+      itchLink: "https://itch.io/placeholder",
+      description: "Project details for She'll Come Back"
+    },
+    'interning-god': {
+      title: "Interning God",
+      subtitle: "Released",
+      status: "Released",
+      itchLink: "https://itch.io/placeholder",
+      description: "Project details for Interning God"
+    },
+    'soul-traveler': {
+      title: "Soul Traveler's Dream",
+      subtitle: "In development",
+      status: "In development",
+      description: "Project details for Soul Traveler's Dream"
+    },
+    'harvester-run': {
+      title: "Harvester Run",
+      subtitle: "Released",
+      status: "Released",
+      description: "A game demo showcase"
+    }
+  };
+
+  const handleProjectClick = (projectId) => {
+    setSelectedProject(projectId);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
+
   return (
-    <main style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      overflowY: "scroll",
-      overflowX: "hidden",
-      scrollSnapType: "y mandatory",
-      backgroundColor: "#0a0a0a",
-      fontFamily: "system-ui, -apple-system, sans-serif",
-      scrollBehavior: "smooth"
-    }}>
-      {/* Section 01 - WIP */}
-      <section className="logistics-section" style={{
-        width: "100%",
-        height: "100vh",
-        scrollSnapAlign: "start",
-        scrollSnapStop: "always",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "60px 80px",
-        boxSizing: "border-box",
-        backgroundColor: "#faf9f7",
-        position: "relative"
-      }}>
-        <div style={{
-          textAlign: "center",
-          maxWidth: "800px"
-        }}>
-          <h1 style={{
-            fontSize: "3em",
-            fontWeight: 700,
-            color: "#3d3d3d",
-            margin: 0,
-            marginBottom: "24px",
-            letterSpacing: "-1px"
-          }}>
-            Work In Progress
-          </h1>
-          <p style={{
-            fontSize: "1.2em",
-            color: "#5a5a5a",
-            margin: 0,
-            fontWeight: 400,
-            lineHeight: 1.6
-          }}>
-            This section is under construction. Check back soon!
-          </p>
-        </div>
-      </section>
-
-      {/* Section 02 */}
-      <section className="logistics-section" style={{
-        width: "100%",
-        height: "100vh",
-        scrollSnapAlign: "start",
-        scrollSnapStop: "always",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "80px 60px",
-        boxSizing: "border-box",
-        backgroundColor: "#faf9f7"
-      }}>
-        <div className="logistics-section-grid">
-          {/* Left: Media */}
-          <div style={{
-            backgroundColor: "#1a1a1a",
-            borderRadius: "24px",
-            padding: "40px",
-            aspectRatio: "16/9",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid #2a2a2a"
-          }}>
-            <div style={{
-              color: "#666",
-              fontSize: "1.1em",
-              textAlign: "center"
-            }}>Media Placeholder</div>
+    <main className="games-main">
+      <section className="game-projects-section">
+        <div className="game-projects-container">
+          {/* Centered Intro Card */}
+          <div className="intro-card">
+            <p>
+              Here you'll find my game projects, design experiments, and in-progress work. 
+              I focus on gameplay systems and interaction design, and I'm especially interested 
+              in combat design — exploring how timing, readability, combo and hit feedback shape 
+              challenging but fair encounters. I also have strong hands-on coding experience from 
+              shipping these projects.
+            </p>
+            <Link to="/games-played" className="games-played-link">
+              Games I've Played
+            </Link>
           </div>
 
-          {/* Right: Text */}
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "24px"
-          }}>
-            <div style={{
-              fontSize: "120px",
-              fontWeight: 700,
-              color: "#1a1a1a",
-              lineHeight: 1,
-              letterSpacing: "-4px",
-              fontFamily: "system-ui"
-            }}>02</div>
-            <h2 style={{
-              fontSize: "3.5em",
-              fontWeight: 700,
-              color: "#fff",
-              margin: 0,
-              lineHeight: 1.1,
-              letterSpacing: "-1px"
-            }}>Section Title</h2>
-            <p style={{
-              fontSize: "1.3em",
-              color: "#aaa",
-              lineHeight: 1.6,
-              margin: 0,
-              maxWidth: "600px"
-            }}>Section subtitle or brief description goes here. This provides context for the content.</p>
+          {/* 2x2 Grid of Project Blocks */}
+          <div className="projects-grid">
+            {/* Top-left: She'll Come Back */}
+            <div 
+              className="project-block"
+              onClick={() => handleProjectClick('shell-come-back')}
+            >
+              <div className="project-image-placeholder">
+                <img src={shellComeBackImg} alt="She'll Come Back" />
+                <div className="project-overlay">
+                  <h3 className="project-title">She'll Come Back</h3>
+                  <p className="project-subtitle">Released</p>
+                </div>
+              </div>
+              <div className="project-content">
+              </div>
+            </div>
+
+            {/* Top-right: Interning God */}
+            <div 
+              className="project-block"
+              onClick={() => handleProjectClick('interning-god')}
+            >
+              <div className="project-image-placeholder">
+                <img src={interningGodImg} alt="Interning God" />
+                <div className="project-overlay project-overlay-right">
+                  <h3 className="project-title">Interning God</h3>
+                  <p className="project-subtitle">Released</p>
+                </div>
+              </div>
+              <div className="project-content">
+              </div>
+            </div>
+
+            {/* Bottom-left: Soul Traveler's Dream */}
+            <div 
+              className="project-block"
+              onClick={() => handleProjectClick('soul-traveler')}
+            >
+              <div className="project-image-placeholder">
+                <img src={cyberCityBgImg} alt="Soul Traveler's Dream" />
+                <div className="project-overlay">
+                  <h3 className="project-title">Soul Traveler's Dream</h3>
+                  <p className="project-subtitle">In development</p>
+                </div>
+              </div>
+              <div className="project-content">
+              </div>
+            </div>
+
+            {/* Bottom-right: Harvester Run */}
+            <div 
+              className="project-block"
+              onClick={() => handleProjectClick('harvester-run')}
+            >
+              <div className="project-image-placeholder">
+                <img src={harvesterRunImg} alt="Harvester Run" />
+                <div className="project-overlay project-overlay-right">
+                  <h3 className="project-title">Harvester Run</h3>
+                  <p className="project-subtitle">Released</p>
+                </div>
+              </div>
+              <div className="project-content">
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 03 */}
-      <section className="logistics-section" style={{
-        width: "100%",
-        height: "100vh",
-        scrollSnapAlign: "start",
-        scrollSnapStop: "always",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "80px 60px",
-        boxSizing: "border-box",
-        backgroundColor: "#faf9f7"
-      }}>
-        <div className="logistics-section-grid">
-          {/* Left: Media */}
-          <div style={{
-            backgroundColor: "#1a1a1a",
-            borderRadius: "24px",
-            padding: "40px",
-            aspectRatio: "16/9",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid #2a2a2a"
-          }}>
-            <div style={{
-              color: "#666",
-              fontSize: "1.1em",
-              textAlign: "center"
-            }}>Media Placeholder</div>
-          </div>
-
-          {/* Right: Text */}
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "24px"
-          }}>
-            <div style={{
-              fontSize: "120px",
-              fontWeight: 700,
-              color: "#1a1a1a",
-              lineHeight: 1,
-              letterSpacing: "-4px",
-              fontFamily: "system-ui"
-            }}>03</div>
-            <h2 style={{
-              fontSize: "3.5em",
-              fontWeight: 700,
-              color: "#fff",
-              margin: 0,
-              lineHeight: 1.1,
-              letterSpacing: "-1px"
-            }}>Section Title</h2>
-            <p style={{
-              fontSize: "1.3em",
-              color: "#aaa",
-              lineHeight: 1.6,
-              margin: 0,
-              maxWidth: "600px"
-            }}>Section subtitle or brief description goes here. This provides context for the content.</p>
+      {/* Modal for Project Details */}
+      {selectedProject && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>×</button>
+            <h2>{projects[selectedProject].title}</h2>
+            <p className="modal-status">{projects[selectedProject].status || projects[selectedProject].subtitle}</p>
+            <p>{projects[selectedProject].description}</p>
           </div>
         </div>
-      </section>
+      )}
     </main>
   );
 }
