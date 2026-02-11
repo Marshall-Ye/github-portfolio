@@ -1,4 +1,5 @@
 import './Logistics.css';
+import brokerHelperImg from '../assets/broker helper 1.png';
 
 export default function Logistics() {
   return (
@@ -64,35 +65,47 @@ export default function Logistics() {
         scrollSnapStop: "always",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "80px 60px",
+        justifyContent: "flex-start",
+        padding: "80px 60px 80px 0px",
         boxSizing: "border-box",
         backgroundColor: "#faf9f7"
       }}>
-        <div className="logistics-section-grid">
+        <div className="logistics-section-grid" style={{ alignItems: "flex-start", maxWidth: "1400px", marginLeft: "300px", gap: "120px" }}>
           {/* Left: Media */}
           <div style={{
-            backgroundColor: "#1a1a1a",
-            borderRadius: "24px",
-            padding: "40px",
-            aspectRatio: "16/9",
+            backgroundColor: "transparent",
+            borderRadius: "40px",
+            padding: "20px",
+            minHeight: "500px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid #2a2a2a"
+            justifyContent: "flex-start",
+            overflow: "visible",
+            marginLeft: "0"
           }}>
-            <div style={{
-              color: "#666",
-              fontSize: "1.1em",
-              textAlign: "center"
-            }}>Media Placeholder</div>
+            <img 
+              src={brokerHelperImg} 
+              alt="Broker Helper" 
+              style={{
+                width: "100%",
+                maxWidth: "none",
+                height: "auto",
+                objectFit: "contain",
+                transform: "scale(1.5)",
+                filter: "drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))",
+                borderRadius: "32px"
+              }}
+            />
           </div>
 
           {/* Right: Text */}
           <div style={{
             display: "flex",
             flexDirection: "column",
-            gap: "24px"
+            gap: "24px",
+            marginLeft: "100px",
+            zIndex: 10,
+            position: "relative"
           }}>
             <div style={{
               fontSize: "120px",
