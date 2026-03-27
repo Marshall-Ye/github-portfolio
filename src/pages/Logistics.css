@@ -1,38 +1,314 @@
-.logistics-section-grid {
-  max-width: 1400px;
+/* ===== Base ===== */
+
+.logistics-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.logistics-section {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  box-sizing: border-box;
+}
+
+/* ===== Section 01 — Hero ===== */
+
+.logistics-section--hero {
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
+  padding: 80px 120px;
+  background-color: #faf9f7;
+}
+
+.logistics-hero-content {
+  max-width: 820px;
+}
+
+.logistics-project-label {
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #a09080;
+  margin-bottom: 20px;
+}
+
+.logistics-hero-title {
+  font-size: 5em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 36px;
+  letter-spacing: -3px;
+  line-height: 1;
+}
+
+.logistics-hero-problem {
+  font-size: 1.15em;
+  color: #3d3d3d;
+  line-height: 1.8;
+  margin: 0 0 18px;
+  font-weight: 400;
+}
+
+.logistics-hero-solution {
+  font-size: 1.1em;
+  color: #6a6a6a;
+  line-height: 1.8;
+  margin: 0 0 40px;
+  font-weight: 400;
+}
+
+.logistics-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logistics-tech-tag {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #4a5a6a;
+  background-color: #e4eaf0;
+  padding: 6px 16px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* ===== Section 02 — Flow + Auto-fixes ===== */
+
+.logistics-section--flow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 64px 120px;
+  background-color: #edf2f7;
+}
+
+.logistics-flow-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.logistics-flow-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.logistics-flow-step {
+  flex: 1;
+}
+
+.logistics-flow-arrow {
+  font-size: 1.8em;
+  color: #b0bec8;
+  padding: 0 24px;
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+
+.logistics-flow-num {
+  display: block;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #7a9ab0;
+  margin-bottom: 10px;
+}
+
+.logistics-flow-step-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.logistics-flow-step-desc {
+  font-size: 0.9em;
+  color: #6a7a8a;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 220px;
+}
+
+.logistics-autofixes-heading {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 24px;
+}
+
+.logistics-autofixes-sub {
+  font-weight: 400;
+  color: #8a9aaa;
+  font-size: 0.9em;
+}
+
+.logistics-autofixes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.logistics-autofix-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.logistics-autofix-check {
+  font-size: 0.9em;
+  color: #4a9a6a;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.logistics-autofix-title {
+  display: block;
+  font-size: 0.88em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.logistics-autofix-desc {
+  font-size: 0.82em;
+  color: #6a6a6a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Section 03 — Features ===== */
+
+.logistics-section--features {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 120px;
+  background-color: #f0ece7;
+}
+
+.logistics-features-container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.logistics-features-heading {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 48px;
+  letter-spacing: -1.5px;
+}
+
+.logistics-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.logistics-feature-card {
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 28px 28px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logistics-feature-number {
+  display: block;
+  font-size: 0.75em;
+  font-weight: 700;
+  color: #b8a898;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.logistics-feature-name {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+}
+
+.logistics-feature-desc {
+  font-size: 0.92em;
+  color: #5a5a5a;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+  .logistics-section--hero,
+  .logistics-section--flow,
+  .logistics-section--features {
+    padding: 60px 60px;
+  }
+
+  .logistics-hero-title {
+    font-size: 3.8em;
+  }
 }
 
 @media (max-width: 768px) {
-  .logistics-section-grid {
+  .logistics-section--hero,
+  .logistics-section--flow,
+  .logistics-section--features {
+    padding: 40px 24px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .logistics-flow-steps {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .logistics-flow-arrow {
+    transform: rotate(90deg);
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .logistics-autofixes-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
-  
-  .logistics-section-number {
-    font-size: 80px !important;
+
+  .logistics-hero-title {
+    font-size: 3em;
+    letter-spacing: -1.5px;
   }
-  
-  .logistics-section-title {
-    font-size: 2.5em !important;
+
+  .logistics-features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  
-  .logistics-section-subtitle {
-    font-size: 1.1em !important;
-  }
-  
-  .logistics-section {
-    padding: 40px 24px !important;
-  }
-  
-  /* Responsive for About Me section layout */
-  .logistics-section > div[style*="gridTemplateColumns"] {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
+
+  .logistics-features-heading {
+    font-size: 2em;
+    margin-bottom: 28px;
   }
 }
-

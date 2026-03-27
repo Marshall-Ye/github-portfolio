@@ -8,6 +8,7 @@ import cyberCityBgImg from '../assets/cyber city background.png';
 
 export default function Games() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [introVisible, setIntroVisible] = useState(true);
 
   const projects = {
     'shell-come-back': {
@@ -51,18 +52,23 @@ export default function Games() {
       <section className="game-projects-section">
         <div className="game-projects-container">
           {/* Centered Intro Card */}
-          <div className="intro-card">
-            <p>
-              Here you'll find my game projects, design experiments, and in-progress work. 
-              I focus on gameplay systems and interaction design, and I'm especially interested 
-              in combat design — exploring how timing, readability, combo and hit feedback shape 
-              challenging but fair encounters. I also have strong hands-on coding experience from 
-              shipping these projects.
-            </p>
-            <Link to="/games-played" className="games-played-link">
-              Games I've Played
-            </Link>
-          </div>
+          {introVisible ? (
+            <div className="intro-card">
+              <button className="intro-hide-btn" onClick={() => setIntroVisible(false)}>hide</button>
+              <p>
+                Here you'll find my game projects, design experiments, and in-progress work.
+                I focus on gameplay systems and interaction design, and I'm especially interested
+                in combat design — exploring how timing, readability, combo and hit feedback shape
+                challenging but fair encounters. I also have strong hands-on coding experience from
+                shipping these projects.
+              </p>
+              <Link to="/games-played" className="games-played-link">
+                Games I've Played
+              </Link>
+            </div>
+          ) : (
+            <button className="intro-show-btn" onClick={() => setIntroVisible(true)}>?</button>
+          )}
 
           {/* 2x2 Grid of Project Blocks */}
           <div className="projects-grid">
