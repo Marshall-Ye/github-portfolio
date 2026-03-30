@@ -455,6 +455,63 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.games-played-count {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.games-status {
+  font-size: 1.1em;
+  color: #888;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.games-error {
+  color: #c0392b;
+}
+
+.games-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.games-category-card {
+  background-color: #f5f4f2;
+  border-radius: 12px;
+  padding: 28px 28px 32px;
+}
+
+.games-category-title {
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 0 0 18px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.games-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.games-list-item {
+  font-size: 0.95em;
+  color: #3d3d3d;
+  line-height: 1.5;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.games-list-item:last-child {
+  border-bottom: none;
+}
+
 @media (max-width: 768px) {
   .games-played-container {
     padding: 40px 24px;
@@ -470,5 +527,10 @@
 
   .games-played-content {
     padding: 40px 24px;
+  }
+
+  .games-category-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
