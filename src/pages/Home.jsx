@@ -29,13 +29,16 @@ export default function Home() {
           {/* Center: Text content */}
           <div className="home-text-content">
             <p className="home-greeting">
-              Hello there! Thanks for stopping by!<br />A guy called Marshall Ye spent a month building this :)
+              Hello there! Thanks for actually opening my website that I spent quite some time building! :)
             </p>
             <p className="home-intro">
               I'm <span className="home-highlight-name">Marshall Ye</span> — a Technical Product Manager in logistics, building systems and tools by day, and games by night.
             </p>
             <p className="home-body-text">
-              By day, I work in logistics, turning messy air, ocean, customs, and warehouse workflows into software and automation that actually help operators get work done. I hold a B.S. in Technology & Information Management from <span className="home-highlight-school">UC Santa Cruz</span>, and I focus on using technology to reduce friction, automate document processes, enable digital workflows, eliminate human error, and improve efficiency as operations scale.
+              <span className="home-highlight-logistics">By day, I work in logistics.</span>
+            </p>
+            <p className="home-body-text">
+              I turn messy air, ocean, customs, and warehouse workflows into software and automation that actually help operators get work done. I hold a B.S. in Technology & Information Management from <span className="home-highlight-school">UC Santa Cruz</span>, and I focus on using technology to reduce friction, automate document processes, enable digital workflows, eliminate human error, and improve efficiency as operations scale.
             </p>
             <p className="home-body-text">
               That focus has pushed me to build internal tools, WMS systems, and automation platforms that live directly inside real operational pain points.
