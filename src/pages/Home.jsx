@@ -29,25 +29,16 @@ export default function Home() {
           {/* Center: Text content */}
           <div className="home-text-content">
             <p className="home-greeting">
-              Hello there! Thanks for actually opening my website that I spent quite some time building! :)
+              Hello there! Thanks for stopping by.
             </p>
             <p className="home-intro">
-              I'm <span className="home-highlight-name">Marshall Ye</span> — a Technical Product Manager in logistics, building systems and tools by day, and games by night.
+              Hi, I'm <span className="home-highlight-name">Marshall Ye</span>.
             </p>
             <p className="home-body-text">
-              <span className="home-highlight-logistics">By day, I work in logistics.</span>
+              I build things that make complex systems work better. At <span className="home-highlight-school">UC Santa Cruz</span> I studied Technology & Information Management, and since then I've split my focus between two fields that both demand the same skill: understanding how the pieces fit, and making them fit better.
             </p>
             <p className="home-body-text">
-              I turn messy air, ocean, customs, and warehouse workflows into software and automation that actually help operators get work done. I hold a B.S. in Technology & Information Management from <span className="home-highlight-school">UC Santa Cruz</span>, and I focus on using technology to reduce friction, automate document processes, enable digital workflows, eliminate human error, and improve efficiency as operations scale.
-            </p>
-            <p className="home-body-text">
-              That focus has pushed me to build internal tools, WMS systems, and automation platforms that live directly inside real operational pain points.
-            </p>
-            <p className="home-body-text">
-              <span className="home-highlight-games">By night, I build video games.</span>
-            </p>
-            <p className="home-body-text">
-              I've always been passionate about games — action, RPGs, MOBAs, you name it. I explore all parts of game development, but I'm especially drawn to <span className="home-highlight-combat">combat design</span>: Boss fights that feel challenging but also fair and fun. I regularly participate in game jams and work on my own projects. The Monster Hunter series is my all-time favorite, and it's the kind of complex, memorable combat experience I hope to create one day.
+              Whether that's a <span className="home-highlight-logistics">logistics automation tool</span> that eliminates human error at scale, or a <span className="home-highlight-combat">boss fight</span> that feels brutal but fair — the design challenge is the same. I'm drawn to systems that reward careful thinking.
             </p>
           </div>
 

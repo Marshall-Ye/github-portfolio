@@ -28,42 +28,52 @@ const features = [
   }
 ];
 
-const autofixes = [
+const autofixGroups = [
   {
-    title: 'Steel & Aluminum Section 232',
-    desc: 'Base HTS codes checked against trigger lists. Matching lines automatically receive Section 232 codes with nested melt/smelt country detail objects — zero manual lookup.'
+    label: 'Compliance & Tariff Logic',
+    items: [
+      {
+        title: 'Steel & Aluminum Section 232',
+        desc: 'Base HTS codes checked against trigger lists. Matching lines automatically receive Section 232 codes with nested melt/smelt country detail objects — zero manual lookup.'
+      },
+      {
+        title: 'Database-Driven Tariff Augmentation',
+        desc: 'HTS codes cross-referenced against an internal mapping database using 10-, 8-, and 4-digit prefix hierarchy. Matching lines get tariff codes appended automatically.'
+      },
+      {
+        title: 'Cotton Fee Handling',
+        desc: 'Cotton fees detected, calculated, added or waived based on entry classification — applied consistently across all line items without operator input.'
+      },
+      {
+        title: 'Policy Code Exclusion',
+        desc: 'A specific set of non-compliant tariff codes is silently removed from every line item before submission, regardless of what was in the source file.'
+      }
+    ]
   },
   {
-    title: 'ZIP Code Repair',
-    desc: 'US postal codes have leading zeros stripped. International codes are zero-padded to 6 digits. Both handled by the same regex pass before any field is written.'
-  },
-  {
-    title: 'Database-Driven Tariff Augmentation',
-    desc: 'HTS codes cross-referenced against an internal mapping database using 10-, 8-, and 4-digit prefix hierarchy. Matching lines get tariff codes appended automatically.'
-  },
-  {
-    title: 'Cotton Fee Handling',
-    desc: 'Cotton fees detected, calculated, added or waived based on entry classification — applied consistently across all line items without operator input.'
-  },
-  {
-    title: 'Policy Code Exclusion',
-    desc: 'A specific set of non-compliant tariff codes is silently removed from every line item before submission, regardless of what was in the source file.'
-  },
-  {
-    title: 'Currency Normalization',
-    desc: 'Price fields strip $, ¥, and € symbols, remove commas, and convert parenthetical negatives like (123.45) to -123.45. Output is always clean two-decimal format.'
-  },
-  {
-    title: 'Group Line Aggregation',
-    desc: 'Rows sharing the same Group_Line classification are consolidated into a single customs line item — quantities, weights, and values summed automatically.'
-  },
-  {
-    title: 'HAWB Length Normalization',
-    desc: 'House air waybill numbers enforced to exactly 12 characters — truncated from the right if too long, zero-padded from the left if too short.'
-  },
-  {
-    title: 'NaN & Null Field Sanitization',
-    desc: 'None, NaN, "nan", "null", and whitespace-only strings are caught across all fields and converted to proper empty values before the payload is built.'
+    label: 'Data Sanitization',
+    items: [
+      {
+        title: 'ZIP Code Repair',
+        desc: 'US postal codes have leading zeros stripped. International codes are zero-padded to 6 digits. Both handled by the same regex pass before any field is written.'
+      },
+      {
+        title: 'Currency Normalization',
+        desc: 'Price fields strip $, ¥, and € symbols, remove commas, and convert parenthetical negatives like (123.45) to -123.45. Output is always clean two-decimal format.'
+      },
+      {
+        title: 'HAWB Length Normalization',
+        desc: 'House air waybill numbers enforced to exactly 12 characters — truncated from the right if too long, zero-padded from the left if too short.'
+      },
+      {
+        title: 'NaN & Null Field Sanitization',
+        desc: 'None, NaN, "nan", "null", and whitespace-only strings are caught across all fields and converted to proper empty values before the payload is built.'
+      },
+      {
+        title: 'Group Line Aggregation',
+        desc: 'Rows sharing the same Group_Line classification are consolidated into a single customs line item — quantities, weights, and values summed automatically.'
+      }
+    ]
   }
 ];
 
@@ -72,24 +82,81 @@ export default function Logistics() {
     <main className="logistics-main">
       {/* Section 01 - Hero */}
       <section className="logistics-section logistics-section--hero">
-        <div className="logistics-hero-content">
-          <span className="logistics-project-label">Project 01</span>
-          <h1 className="logistics-hero-title">Broker Helper</h1>
-          <p className="logistics-hero-problem">
-            Customs brokerage requires transforming hundreds of rows of commercial invoice
-            data into formats that meet strict US compliance requirements — manually.
-            Hours of repetitive work, per shipment, per operator.
-          </p>
-          <p className="logistics-hero-solution">
-            Broker Helper eliminates that entirely. Built for real operators in
-            production, it automates the full pipeline — from raw Excel files to
-            validated, submission-ready customs entries — turning a multi-hour process
-            into a single drag-and-drop.
-          </p>
-          <div className="logistics-tech-stack">
-            {['Python', 'pandas', 'customtkinter', 'PyInstaller', 'REST API'].map(tag => (
-              <span key={tag} className="logistics-tech-tag">{tag}</span>
-            ))}
+        <div className="logistics-hero-grid">
+          <div className="logistics-hero-content">
+            <span className="logistics-project-label">Project 01 — Logistics Automation</span>
+            <h1 className="logistics-hero-title">
+              Broker<br />
+              <span className="logistics-hero-title-accent">Helper.</span>
+            </h1>
+            <p className="logistics-hero-problem">
+              Customs brokerage turns hundreds of invoice rows into compliance-ready
+              filings — <strong>by hand</strong>. Hours of repetition, per shipment,
+              per operator.
+            </p>
+            <p className="logistics-hero-solution">
+              Broker Helper automates the whole pipeline. Raw Excel in, validated
+              customs entry out — a multi-hour process collapsed into a single
+              drag-and-drop.
+            </p>
+
+            <div className="logistics-hero-stats">
+              <div className="logistics-hero-stat">
+                <span className="logistics-hero-stat-number">~3 hrs <span className="logistics-hero-stat-arrow">→</span> 30 s</span>
+                <span className="logistics-hero-stat-label">per filing</span>
+              </div>
+              <div className="logistics-hero-stat">
+                <span className="logistics-hero-stat-number">9</span>
+                <span className="logistics-hero-stat-label">auto-corrections</span>
+              </div>
+              <div className="logistics-hero-stat">
+                <span className="logistics-hero-stat-number">995</span>
+                <span className="logistics-hero-stat-label">rows per chunk</span>
+              </div>
+            </div>
+
+            <div className="logistics-tech-stack">
+              {['Python', 'pandas', 'customtkinter', 'PyInstaller', 'REST API'].map(tag => (
+                <span key={tag} className="logistics-tech-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="logistics-hero-visual">
+            <div className="logistics-hero-mock logistics-hero-mock--before">
+              <div className="logistics-hero-mock-header">
+                <span className="logistics-hero-mock-dot" />
+                <span className="logistics-hero-mock-dot" />
+                <span className="logistics-hero-mock-dot" />
+                <span className="logistics-hero-mock-label">raw_invoice.xlsx</span>
+              </div>
+              <pre className="logistics-hero-mock-body">
+<span className="mock-key">hts</span>        <span className="mock-str-bad">"7208406030"</span>
+<span className="mock-key">qty</span>        <span className="mock-num">"1,200"</span>
+<span className="mock-key">price</span>      <span className="mock-str-bad">"$48,230.00"</span>
+<span className="mock-key">zip</span>        <span className="mock-str-bad">"7205"</span>
+<span className="mock-key">hawb</span>       <span className="mock-str-bad">"160847291"</span>
+<span className="mock-key">country</span>    <span className="mock-str-bad">"nan"</span>
+              </pre>
+            </div>
+
+            <div className="logistics-hero-mock-arrow">→</div>
+
+            <div className="logistics-hero-mock logistics-hero-mock--after">
+              <div className="logistics-hero-mock-header">
+                <span className="logistics-hero-mock-dot logistics-hero-mock-dot--ok" />
+                <span className="logistics-hero-mock-label">entry_payload.json</span>
+              </div>
+              <pre className="logistics-hero-mock-body">
+<span className="mock-key">"hts_primary"</span>: <span className="mock-str-ok">"7208.40.60.30"</span>,
+<span className="mock-key">"hts_232"</span>:     <span className="mock-str-ok">"9903.81.01"</span>,
+<span className="mock-key">"quantity"</span>:    <span className="mock-num-ok">1200</span>,
+<span className="mock-key">"value_usd"</span>:   <span className="mock-num-ok">48230.00</span>,
+<span className="mock-key">"zip"</span>:         <span className="mock-str-ok">"07205"</span>,
+<span className="mock-key">"hawb"</span>:        <span className="mock-str-ok">"000160847291"</span>,
+<span className="mock-key">"country"</span>:     <span className="mock-null">null</span>
+              </pre>
+            </div>
           </div>
         </div>
       </section>
@@ -125,17 +192,22 @@ export default function Logistics() {
               What gets corrected automatically
               <span className="logistics-autofixes-sub"> — so your brokers don't have to do it</span>
             </h3>
-            <div className="logistics-autofixes-grid">
-              {autofixes.map(fix => (
-                <div key={fix.title} className="logistics-autofix-item">
-                  <span className="logistics-autofix-check">✓</span>
-                  <div>
-                    <strong className="logistics-autofix-title">{fix.title}</strong>
-                    <p className="logistics-autofix-desc">{fix.desc}</p>
-                  </div>
+            {autofixGroups.map(group => (
+              <div key={group.label} className="logistics-autofix-group">
+                <h4 className="logistics-autofix-group-label">{group.label}</h4>
+                <div className="logistics-autofixes-grid">
+                  {group.items.map(fix => (
+                    <div key={fix.title} className="logistics-autofix-item">
+                      <span className="logistics-autofix-check">✓</span>
+                      <div>
+                        <strong className="logistics-autofix-title">{fix.title}</strong>
+                        <p className="logistics-autofix-desc">{fix.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
         </div>

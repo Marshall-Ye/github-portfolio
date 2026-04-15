@@ -7,7 +7,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: #0a0a0a;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 .game-projects-section {
@@ -87,7 +87,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.6);
   font-size: 1em;
-  font-family: Georgia, serif;
+  font-family: 'Syne', system-ui, sans-serif;
   cursor: pointer;
   z-index: 25;
   pointer-events: auto;
@@ -408,9 +408,9 @@
 }
 
 .games-played-container {
-  max-width: 1200px;
+  max-width: clamp(1200px, 80vw, 2400px);
   width: 100%;
-  padding: 80px 60px;
+  padding: clamp(60px, 6vh, 100px) clamp(40px, 5vw, 120px);
   box-sizing: border-box;
 }
 
